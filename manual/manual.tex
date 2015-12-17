@@ -1,13 +1,58 @@
 \documentclass{llncs}
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage{xspace}
 
-\title{UC gewinnt -- ein lustiges Knobelspiel für zwei oder mehr Spieler}
+\title{\ucftw---a Universally Composable Dice Game for Two or More Players}
 \date{\today}
 \author{Dirk Achenbach\inst{1} \and Brandon Broadnax\inst{1} \and Bernhard Löwe\inst{1} \and Jochen Rill\inst{2} \and Mario Strefler\inst{1}}
 \institute{Karlsruhe Institute of Technology (KIT) \and FZI Forschungszentrum Informatik}
 
+\newcommand{\ucftw}{UC$^4$TW\xspace}
+
 \begin{document}
 \maketitle
+\begin{abstract}
+	We propose \emph{Universal Composability for the Win} (\ucftw), a novel dice game for two or more players. 
+	The goal of the game is to obtain the most powerful security notion at the table. 
+	As it is often not easily determined if a security notion implies another, the key to winning the game are clever arguments.
+	The game proceeds in turns. 
+	Each turn, the players throw the dice to obtain a quantifier and a party to complement their notion. 
+	Random modifiers spice things up.
+	The player with the most powerful security notion wins---with the obvious exception that no notion trumps the Universal Composability (UC)~\cite{can01,can05,can13} notion.
+	To the best of our knowledge, \ucftw is the first UC-based game to be proposed.
+\end{abstract}
 
+\section{Introduction}
+\begin{theorem}
+  If a matter cannot decided by the rules of the game alone, or should any rule be ill-defined, the issue is to be resolved by discussion.
+\end{theorem}
+
+\subsection{Prior Work}
+
+\section{Rules of the Game}
+\subsection{The Dice}
+\subsection{Modifier Cards}
+
+\section{Future Work}
+We leave actually playing the game open for future work.
+
+\begin{thebibliography}{9}
+\bibitem{can01}
+  Ran Canetti,
+  \emph{Universally Composable Security: A New Paradigm for Cryptographic Protocols},
+  Cryptology ePrint Archive: Report 2000/067,
+  2001.
+
+\bibitem{can05}
+  Ran Canetti,
+  \emph{Universally Composable Security: A New Paradigm for Cryptographic Protocols},
+  Cryptology ePrint Archive: Report 2000/067,
+  2005.
+
+\bibitem{can13}
+  Ran Canetti,
+  \emph{Universally Composable Security: A New Paradigm for Cryptographic Protocols},
+  Cryptology ePrint Archive: Report 2000/067,
+  2013.
+\end{thebibliography}
 \end{document}
