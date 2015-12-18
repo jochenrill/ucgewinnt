@@ -3,6 +3,7 @@
 \usepackage{xspace}
 \usepackage{amsmath}
 \usepackage{stmaryrd}
+\usepackage{marvosym}
 
 
 \title{\ucftw---a Universally Composable Dice Game for Two or More Players}
@@ -43,7 +44,7 @@ See Definition~\ref{def:dices} for a definition of the dice's faces.
 	\begin{align*}
 		\Omega_\text{Quantifier} &:= \{\exists, \forall\}  \\
 		\Omega_\text{Entity} &:= \{\mathcal{A}, \mathcal{S}, \mathcal{Z}\}  \\
-		\Omega_\text{Modifier} &:= \{\varepsilon, \lightning\} 
+		\Omega_\text{Modifier} &:= \{\varepsilon, \blitz\} 
 	\end{align*}
 	\label{def:dices}
 \end{definition}
@@ -55,11 +56,13 @@ During the setup stage, the deck of modifier cards is shuffled.
 \ucftw proceeds in \emph{rounds}.
 During each round, the players take turns in throwing the dice.
 A player throws the dice and writes the quantifier and entity event down.
-Further, if $X_\text{Modifier} = \lightning$, the player draws a card from the deck of modifier cards. 
+Further, if $X_\text{Modifier} = \blitz$, the player draws a card from the deck of modifier cards. 
 
 \begin{theorem}
 	The player with the lowest publication count begins. The game continues counter-clockwise.
 \end{theorem}
+
+\stopsign
 
 \section{Future Work}
 Actually playing the game was outside the scope of this work.
