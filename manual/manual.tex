@@ -1,22 +1,25 @@
 \documentclass{llncs}
 \usepackage[utf8]{inputenc}
 \usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+
 
 \title{\ucftw---a Universally Composable Dice Game for Two or More Players}
 \date{\today}
 \author{Dirk Achenbach\inst{1} \and Brandon Broadnax\inst{1} \and Bernhard Löwe\inst{1} \and Jochen Rill\inst{2} \and Mario Strefler\inst{1}}
 \institute{Karlsruhe Institute of Technology (KIT) \and FZI Forschungszentrum Informatik}
 
-\newcommand{\ucftw}{UC$^4$TW\xspace}
+\input{definitions}
 
 \begin{document}
 \maketitle
 \begin{abstract}
 	We propose \emph{Universal Composability for the Win} (\ucftw), a novel dice game for two or more players. 
-	The goal of the game is to obtain the most powerful security notion at the table. 
+	The goal of the game is to obtain the most powerful security notion among the players. 
 	As it is often not easily determined if a security notion implies another, the key to winning the game are clever arguments.
 	The game proceeds in turns. 
-	Each turn, the players throw the dice to obtain a quantifier and a party to complement their notion. 
+	Each turn, the players throw the dice to obtain a quantifier and an entity to complement their notion. 
 	Random modifiers spice things up.
 	The player with the most powerful security notion wins---with the obvious exception that no notion trumps the Universal Composability (UC)~\cite{can01,can05,can13} notion.
 	To the best of our knowledge, \ucftw is the first UC-based game to be proposed.
@@ -29,12 +32,38 @@
 
 \subsection{Prior Work}
 
-\section{Rules of the Game}
-\subsection{The Dice}
-\subsection{Modifier Cards}
+\section{The Rules of the Game}
+\ucftw is founded on three dice and a set of modifier cards.
+The dice all have six sides.
+The \emph{Quantifier Dice} is used to roll a quantifier, while the \emph{Entity Dice} has the sides $\mathcal{A}$, $\mathcal{S}$, and $\mathcal{Z}$.
+What is more, the \emph{Modifier Dice} introduces additional modifications to the security notion.
+We stress that \ucftw's mechanics do not rely on the dice rolls being uniformly distributed.
+See Definition~\ref{def:dices} for a definition of the dice's faces.
+\begin{definition}[The Dice]
+	\begin{align*}
+		\Omega_\text{Quantifier} &:= \{\exists, \forall\}  \\
+		\Omega_\text{Entity} &:= \{\mathcal{A}, \mathcal{S}, \mathcal{Z}\}  \\
+		\Omega_\text{Modifier} &:= \{\varepsilon, \lightning\} 
+	\end{align*}
+	\label{def:dices}
+\end{definition}
+
+\subsection{Setup Stage}
+During the setup stage, the deck of modifier cards is shuffled.
+
+\subsection{The Course of the Game}
+\ucftw proceeds in \emph{rounds}.
+During each round, the players take turns in throwing the dice.
+A player throws the dice and writes the quantifier and entity event down.
+Further, if $X_\text{Modifier} = \lightning$, the player draws a card from the deck of modifier cards. 
+
+\begin{theorem}
+	The player with the lowest publication count begins. The game continues counter-clockwise.
+\end{theorem}
 
 \section{Future Work}
-We leave actually playing the game open for future work.
+Actually playing the game was outside the scope of this work.
+We leave evaluating the game's mechanics open for future work.
 
 \begin{thebibliography}{9}
 \bibitem{can01}
