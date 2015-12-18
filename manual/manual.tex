@@ -21,7 +21,7 @@
 	As it is often not easily determined if a security notion implies another, the key to winning the game are clever arguments.
 	The game proceeds in turns. 
 	Each turn, the parties throw the dice to obtain a quantifier and an entity to complement their notion. 
-	Random modifiers spice things up.
+	Random modifiers make the game more exciting.
 	The party with the most powerful security notion wins---with the obvious exception that no notion trumps the Universal Composability (UC)~\cite{can01,can05,can13} notion.
 	To the best of our knowledge, \ucftw is the first UC-based game to be proposed.
 \end{abstract}
@@ -40,7 +40,7 @@ The dice all have six sides.
 The \emph{Quantifier Dice} is used to roll a quantifier, while the \emph{Entity Dice} has the sides $\mathcal{A}$, $\mathcal{S}$, and $\mathcal{Z}$.
 What is more, the \emph{Modifier Dice} introduces additional modifications to the security notion.
 We stress that \ucftw's mechanics do not rely on the dice rolls being uniformly distributed.
-See Definition~\ref{def:dices} for a definition of the dice's faces.
+See Definition~\ref{def:dices} for a definition of the dices' faces.
 \begin{definition}[The Dice]
 	\begin{align*}
 		\Omega_\text{Quantifier} &:= \{\exists, \forall\}  \\
@@ -89,9 +89,19 @@ Further, if $X_\text{Modifier} = \blitz$, the party draws a card from the deck o
 
 Finally, when all parties have retired from the game, the winner can be determined. To this end, the parties' notions are interpreted in the sense that a construction is secure if $\mathcal{Z}$'s output in the ideal model is indistinguishable from its output in the real model~\cite{can01,can05,can13}.
 
-\begin{theorem}
+\begin{theorem}[Winning the Game]
 	The party with the strongest security notion wins the game.
 \end{theorem}
+
+A security notion $\alpha$ is stronger than another security notion $\beta$ if $\alpha$ implies $\beta$, that is, if any protocol secure relative to $\beta$ is also secure relative to $\alpha$.
+
+It is of course not always self-evident whether a notion implies another. Such cases of ambiguity are to be resolved by a discussion among the parties. If no direct implication can be found, the parties must agree on a weaker form of implication. What is more, it can be counted as an added bonus if a notion has a Composition Theorem.
+
+\begin{theorem}[Weakly Winning the Game]
+	If no strongest security notion can be determined, the party with the best security notion wins the game.
+\end{theorem}
+
+Another concern \ucftw addresses is the distinctiveness of the UC notion~\cite{can01,can05,can13}.
 
 \begin{theorem}[The Superiority Rule]
 	A party with the notion $\forall\mathcal{A}\exists\mathcal{S}\forall\mathcal{Z}$ instantly wins the game, even before the other parties retire from the game.
@@ -99,7 +109,7 @@ Finally, when all parties have retired from the game, the winner can be determin
 
 \section{Future Work}
 Actually playing the game is outside the scope of this work.
-We leave evaluating the game's mechanics open.
+We leave it an open research question to evaluate the game's mechanics.
 
 \begin{thebibliography}{9}
 \bibitem{can01}
